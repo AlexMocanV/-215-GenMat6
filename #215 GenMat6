@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+long long int n,m,x[7][7],i,j,y,copie,nr;
+
+int main()
+{
+
+   cin>>n;
+   for(i=1;i<=6;i++)
+   {
+       for(j=1;j<=6;j++)
+       {
+          if(i==j)
+          {
+              x[i][j]=0;
+          }
+          else if(i<j)
+          {
+                y=pow(10,i);
+                x[i][j]=(n%y)/(y/10);
+
+          }
+            else
+            {
+                  y=pow(10,j);
+                    x[i][j]=(n%y)/(y/10);
+            }
+       }
+   }
+    for(i=1;i<=6;i++)
+   {
+       for(j=1;j<=6;j++)
+       {
+          cout<<x[i][j]<<" ";
+       }
+       cout<<endl;
+   }
+    return 0;
+}
